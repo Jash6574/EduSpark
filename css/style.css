@@ -717,7 +717,7 @@ h4,
   color: #136ad5;
 }
 
-.site-mobile-menu .site-nav-wrap .arrow-collapse {
+.site-mobile-menu .site-nav-wrap .ar-collapse {
   position: absolute;
   right: 0px;
   top: 0px;
@@ -1127,6 +1127,7 @@ h4,
 .untree_co-section {
   padding: 100px 0;
   position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 991.98px) {

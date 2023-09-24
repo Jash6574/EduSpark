@@ -1,4 +1,9 @@
-
+<!-- /*
+* Template Name: Learner
+* Template Author: Untree.co
+* Tempalte URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,8 +30,7 @@
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <title>EduSpark Learning - Sign of Success</title>
-
+  <title>Learner Free Bootstrap Template by Untree.co</title>
 </head>
 
 <body>
@@ -54,11 +58,11 @@
           </div>
 
           <div class="col-6 col-lg-3 text-right">
-            <a href="login.html" class="small mr-3">
+            <a href="login.php" class="small mr-3">
               <span class="icon-lock"></span>
               Log In
             </a>
-            <a href="register.html" class="small">
+            <a href="register.php" class="small">
               <span class="icon-person"></span>
               Register
             </a>
@@ -70,14 +74,14 @@
     <div class="sticky-nav js-sticky-header">
       <div class="container position-relative">
         <div class="site-navigation text-center">
-          <a href="index.html" class="logo menu-absolute m-0">EduSpark</a>
+          <a href="index.php" class="logo menu-absolute m-0">Learner<span class="text-primary">.</span></a>
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li class="has-children">
               <a href="#">Dropdown</a>
               <ul class="dropdown">
-                <li><a href="elements.html">Elements</a></li>
+                <li><a href="elements.php">Elements</a></li>
                 <li class="has-children">
                   <a href="#">Menu Two</a>
                   <ul class="dropdown">
@@ -89,11 +93,11 @@
                 <li><a href="#">Menu Three</a></li>
               </ul>
             </li>
-            <li><a href="staff.html">Our Staff</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-            <li class="active"><a href="contact.html">Contact</a></li>
+            <li><a href="staff.php">Our Staff</a></li>
+            <li><a href="news.php">News</a></li>
+            <li class="active"><a href="gallery.php">Gallery</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
           </ul>
 
           <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
@@ -108,17 +112,26 @@
   </nav>
   
 
-  <div class="untree_co-hero inner-page overlay" style="background-image: url('images/img-school-5-min.jpg');">
+  <div class="untree_co-hero overlay" style="background-image: url('images/img-school-4-min.jpg');">
     <div class="container">
       <div class="row align-items-center justify-content-center">
         <div class="col-12">
           <div class="row justify-content-center ">
             <div class="col-lg-6 text-center ">
-              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Register</h1>
+              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Gallery</h1>
+              <div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <p>Another free template by <a href="https://untree.co/" target="_blank" class="link-highlight">Untree.co</a>. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.</p>
+              </div>
+
+              <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-secondary">Explore courses</a></p>
 
             </div>
+
+
           </div>
+
         </div>
+
       </div> <!-- /.row -->
     </div> <!-- /.container -->
 
@@ -129,41 +142,68 @@
 
   <div class="untree_co-section">
     <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-4 item">
+          <a href="images/img-school-5-min.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img-school-5-min.jpg">
+          </a>
+          <a href="images/img_1.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img_1.jpg">
+          </a>
+          <a href="images/img_2.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="100">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img_2.jpg">
+          </a>
+          <a href="images/img_3.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="200">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img_3.jpg">
+          </a>
 
-      <div class="row mb-5 justify-content-center">
-        <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
-          <form action="#" class="form-box">
-            <div class="row">
-              <div class="col-12 mb-3">
-                <input type="text" class="form-control" placeholder="Full name">
-              </div>
-              <div class="col-12 mb-3">
-                <input type="text" class="form-control" placeholder="Email">
-              </div>
-              <div class="col-12 mb-3">
-                <input type="password" class="form-control" placeholder="Password">
-              </div>
-              <div class="col-12 mb-3">
-                <input type="password" class="form-control" placeholder="Re-type Password">
-              </div>
+        </div>
+        <div class="col-md-6 col-lg-4 item">
+          <a href="images/img-school-1-min.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img-school-1-min.jpg">
+          </a>
+          <a href="images/img_1.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img_4.jpg">
+          </a>
+          <a href="images/img_5.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="100">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img_5.jpg">
+          </a>
+          <a href="images/img_8.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="200">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img_8.jpg">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4 item">
+          <a href="images/img-school-2-min.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img-school-2-min.jpg">
+          </a>
+          <a href="images/img_9.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img_9.jpg">
+          </a>
+          <a href="images/img_6.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="100">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img_6.jpg">
+          </a>
+          <a href="images/img_7.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="200">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img_7.jpg">
+          </a>
+          <a href="images/img_10.jpg" class="item-wrap fancybox mb-4" data-fancybox="gal" data-aos="fade-up" data-aos-delay="0">
+            <span class="icon-search2"></span>
+            <img class="img-fluid" src="images/img_10.jpg">
+          </a>
 
-              <div class="col-12 mb-3">
-                <label class="control control--checkbox">
-                  <span class="caption">Accept our <a href="#">terms and conditions</a></span>
-                  <input type="checkbox" checked="checked" />
-                  <div class="control__indicator"></div>
-                </label>
-              </div>
-
-              <div class="col-12">
-                <input type="submit" value="Send Message" class="btn btn-primary">
-              </div>
-            </div>
-          </form>
         </div>
       </div>
-
-      
     </div>
   </div> <!-- /.untree_co-section -->
 
@@ -173,24 +213,25 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-lg-5 mr-auto">
+        <div class="col-lg-3 mr-auto">
           <div class="widget">
             <h3>About Us<span class="text-primary">.</span> </h3>
-            <p>EduSpark Learning, we're more than just tutors; we're your partners in learning.</p>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           </div> <!-- /.widget -->
           <div class="widget">
             <h3>Connect</h3>
             <ul class="list-unstyled social">
-              <li><a href="#"><span class="icon-youtube"></span></a></li>
-              <li><a href="#"><span class="icon-facebook"></span></a></li>
-              <li><a href="#"><span class="icon-twitter"></span></a></li>
-              <li><a href="#"><span class="icon-linkedin"></span></a></li>
               <li><a href="#"><span class="icon-instagram"></span></a></li>
+              <li><a href="#"><span class="icon-twitter"></span></a></li>
+              <li><a href="#"><span class="icon-facebook"></span></a></li>
+              <li><a href="#"><span class="icon-linkedin"></span></a></li>
+              <li><a href="#"><span class="icon-pinterest"></span></a></li>
+              <li><a href="#"><span class="icon-dribbble"></span></a></li>
             </ul>
           </div> <!-- /.widget -->
         </div> <!-- /.col-lg-3 -->
 
-        <!-- <div class="col-lg-3 ml-auto">
+        <div class="col-lg-2 ml-auto">
           <div class="widget">
             <h3>Projects</h3>
             <ul class="list-unstyled float-left links">
@@ -200,10 +241,10 @@
               <li><a href="#">jQuery</a></li>
               <li><a href="#">Bootstrap</a></li>
             </ul>
-          </div> 
-        </div>  -->
+          </div> <!-- /.widget -->
+        </div> <!-- /.col-lg-3 -->
 
-        <!-- <div class="col-lg-3">
+        <div class="col-lg-3">
           <div class="widget">
             <h3>Gallery</h3>
             <ul class="instafeed instagram-gallery list-unstyled">
@@ -220,17 +261,17 @@
               <li><a class="instagram-item" href="images/gal_6.jpg" data-fancybox="gal"><img src="images/gal_6.jpg" alt="" width="72" height="72"></a>
               </li>
             </ul>
-          </div> 
-        </div>  -->
+          </div> <!-- /.widget -->
+        </div> <!-- /.col-lg-3 -->
 
 
-        <div class="col-lg-4">
+        <div class="col-lg-3">
           <div class="widget">
             <h3>Contact</h3>
-            <address>Ready to unlock your potential? Contact EduSpark Learning today to schedule a consultation.</address>
+            <address>43 Raymouth Rd. Baltemoer, London 3910</address>
             <ul class="list-unstyled links mb-4">
-              <li><a href="tel://11234567890">0-123-456-789</a></li>
-              <li><a href="tel://11234567890">0-123-456-789</a></li>
+              <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
+              <li><a href="tel://11234567890">+1(123)-456-7890</a></li>
               <li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
             </ul>
           </div> <!-- /.widget -->
@@ -238,9 +279,9 @@
 
       </div> <!-- /.row -->
 
-      <div class="row mt-5" style="margin-bottom: -50px;">
+      <div class="row mt-5">
         <div class="col-12 text-center">
-          <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; EduSpark Learning - Sign of Success </p>
+          <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed By <a href="https://themewagon.com">ThemeWagon</a>  <!-- License information: https://untree.co/license/ -->
           </div>
         </div>
       </div> <!-- /.container -->

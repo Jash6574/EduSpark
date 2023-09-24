@@ -1,9 +1,69 @@
-<!-- /*
-* Template Name: Learner
-* Template Author: Untree.co
-* Tempalte URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
+<?php
+error_reporting(0);
+
+session_start();
+include 'dbcon.php';
+if (isset($_POST['register'])){
+  $f_name = mysqli_real_escape_string($con, $_POST['f_name']);
+  $l_name = mysqli_real_escape_string($con, $_POST['l_name']);
+  $username = mysqli_real_escape_string($con, $_POST['username']);
+  $email = mysqli_real_escape_string($con,  $_POST['email']);
+  $password = mysqli_real_escape_string($con,  $_POST['password']);
+  $cpassword = mysqli_real_escape_string($con,  $_POST['cpassword']);
+
+  $pass = password_hash($password, PASSWORD_BCRYPT);
+  $cpass = password_hash($cpassword, PASSWORD_BCRYPT);
+
+  $emailquery = "select * from users where email = '$email'";
+  $query = mysqli_query($con, $emailquery);
+
+  $_SESSION['username'] = $email_pass['userName'];
+
+  $emailcount = mysqli_num_rows($query);
+  if($emailcount>0){
+    ?>
+          <script>
+              alert("ERROR: Email already exist!!!\nTry again with an another email");
+          </script>
+          <?php 
+  }
+  else{
+    if($password === $cpassword){
+
+      $insertquery = "insert into users (first_name, last_name, userName, email, password, confirmPassword) values('$f_name','$l_name','$username','$email','$pass','$cpass')";
+
+      $iquery = mysqli_query($con,$insertquery);
+
+      if($con){
+        ?>
+          <script>
+              alert("Registration Succsesfully!!!");
+              location.replace("index.php")
+          </script>
+          <?php 
+      }
+      else{
+          ?>
+          <script>
+              alert("ERROR: Try Again Latter!!!");
+          </script>
+          <?php
+      }
+    }else{
+      ?>
+          <script>
+      alert( "Password and confirm password should be same");
+      </script>
+          <?php
+    }
+  }
+
+
+}
+   
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -59,11 +119,11 @@
           </div>
 
           <div class="col-6 col-lg-3 text-right">
-            <a href="login.html" class="small mr-3">
+            <a href="login.php" class="small mr-3">
               <span class="icon-lock"></span>
               Log In
             </a>
-            <a href="register.html" class="small">
+            <a href="register.php" class="small">
               <span class="icon-person"></span>
               Register
             </a>
@@ -75,14 +135,14 @@
     <div class="sticky-nav js-sticky-header">
       <div class="container position-relative">
         <div class="site-navigation text-center">
-          <a href="index.html" class="logo menu-absolute m-0">EduSpark</a>
+          <a href="index.php" class="logo menu-absolute m-0">EduSpark</a>
 
           <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li class="has-children">
               <a href="#">Dropdown</a>
               <ul class="dropdown">
-                <li><a href="elements.html">Elements</a></li>
+                <li><a href="elements.php">Elements</a></li>
                 <li class="has-children">
                   <a href="#">Menu Two</a>
                   <ul class="dropdown">
@@ -94,11 +154,11 @@
                 <li><a href="#">Menu Three</a></li>
               </ul>
             </li>
-            <li><a href="staff.html">Our Staff</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="about.html">About</a></li>
-            <li class="active"><a href="contact.html">Contact</a></li>
+            <li><a href="staff.php">Our Staff</a></li>
+            <li><a href="news.php">News</a></li>
+            <li><a href="gallery.php">Gallery</a></li>
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
           </ul>
 
           <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
@@ -137,19 +197,25 @@
 
       <div class="row mb-5 justify-content-center">
         <div class="col-lg-5 mx-auto order-1" data-aos="fade-up" data-aos-delay="200">
-          <form action="#" class="form-box">
+          <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post" class="form-box">
             <div class="row">
               <div class="col-12 mb-3">
-                <input type="text" class="form-control" placeholder="Full name">
+                <input type="text" class="form-control"name="f_name" placeholder="First Name" required>
               </div>
               <div class="col-12 mb-3">
-                <input type="text" class="form-control" placeholder="Email">
+                <input type="text" class="form-control" name="l_name" placeholder="Last Name" required>
               </div>
               <div class="col-12 mb-3">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="text" class="form-control" name="username" placeholder="User Name" required>
               </div>
               <div class="col-12 mb-3">
-                <input type="password" class="form-control" placeholder="Re-type Password">
+                <input type="text" class="form-control" name="email" placeholder="Email" required>
+              </div>
+              <div class="col-12 mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+              </div>
+              <div class="col-12 mb-3">
+                <input type="password" class="form-control" name="cpassword" placeholder="Re-type Password" required>
               </div>
 
               <div class="col-12 mb-3">
@@ -161,7 +227,7 @@
               </div>
 
               <div class="col-12">
-                <input type="submit" value="Send Message" class="btn btn-primary">
+              <a href="login.php"> <input type="submit" name="register" value="Register" class="btn btn-primary"></a>
               </div>
             </div>
           </form>
