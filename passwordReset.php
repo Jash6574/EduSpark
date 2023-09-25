@@ -1,3 +1,15 @@
+<?php
+error_reporting(0);
+
+session_start();
+
+if (!isset($_SESSION['username'])) {
+
+  header('location:login.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,7 +44,7 @@
     <link rel="stylesheet" href="css/aos.css" />
     <link rel="stylesheet" href="css/style.css" />
 
-    <title>EduSpark Learning - Sign of Success</title>
+    <title>EduSpark Learning - Password Reset</title>
   </head>
 
   <body>
@@ -45,87 +57,9 @@
       <div class="site-mobile-menu-body"></div>
     </div>
 
-    <nav class="site-nav mb-5">
-      <div class="pb-2 top-bar mb-3">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-6 col-lg-9">
-              <a href="#" class="small mr-3"
-                ><span class="icon-question-circle-o mr-2"></span>
-                <span class="d-none d-lg-inline-block"
-                  >Have a questions?</span
-                ></a
-              >
-              <a href="#" class="small mr-3"
-                ><span class="icon-phone mr-2"></span>
-                <span class="d-none d-lg-inline-block">10 20 123 456</span></a
-              >
-              <a href="#" class="small mr-3"
-                ><span class="icon-envelope mr-2"></span>
-                <span class="d-none d-lg-inline-block"
-                  >info@mydomain.com</span
-                ></a
-              >
-            </div>
-
-            <div class="col-6 col-lg-3 text-right">
-              <a href="login.php" class="small mr-3">
-                <span class="icon-lock"></span>
-                Log In
-              </a>
-              <a href="register.php" class="small">
-                <span class="icon-person"></span>
-                Register
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="sticky-nav js-sticky-header">
-        <div class="container position-relative">
-          <div class="site-navigation text-center">
-            <a href="index.php" class="logo menu-absolute m-0">EduSpark</a>
-
-            <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-              <li><a href="index.php">Home</a></li>
-              <li class="has-children">
-                <a href="#">Dropdown</a>
-                <ul class="dropdown">
-                  <li><a href="elements.php">Elements</a></li>
-                  <li class="has-children">
-                    <a href="#">Menu Two</a>
-                    <ul class="dropdown">
-                      <li><a href="#">Sub Menu One</a></li>
-                      <li><a href="#">Sub Menu Two</a></li>
-                      <li><a href="#">Sub Menu Three</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Menu Three</a></li>
-                </ul>
-              </li>
-              <li><a href="staff.php">Our Staff</a></li>
-              <li><a href="news.php">News</a></li>
-              <li><a href="gallery.php">Gallery</a></li>
-              <li><a href="about.php">About</a></li>
-              <li><a href="contact.php">Contact</a></li>
-            </ul>
-
-            <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute"
-              >Enroll Now</a
-            >
-
-            <a
-              href="#"
-              class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
-              data-toggle="collapse"
-              data-target="#main-navbar"
-            >
-              <span></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <?php 
+include 'navbar.php'
+?>
 
     <div
       class="untree_co-hero inner-page overlay"
@@ -215,110 +149,11 @@
     </div>
     <!-- /.untree_co-section -->
 
-    <div class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5 mr-auto">
-            <div class="widget">
-              <h3>About Us<span class="text-primary">.</span></h3>
-              <p>
-                EduSpark Learning, we're more than just tutors; we're your
-                partners in learning.
-              </p>
-            </div>
-            <!-- /.widget -->
-            <div class="widget">
-              <h3>Connect</h3>
-              <ul class="list-unstyled social">
-                <li>
-                  <a href="#"><span class="icon-youtube"></span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="icon-facebook"></span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="icon-twitter"></span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="icon-linkedin"></span></a>
-                </li>
-                <li>
-                  <a href="#"><span class="icon-instagram"></span></a>
-                </li>
-              </ul>
-            </div>
-            <!-- /.widget -->
-          </div>
-          <!-- /.col-lg-3 -->
-
-          <!-- <div class="col-lg-3 ml-auto">
-          <div class="widget">
-            <h3>Projects</h3>
-            <ul class="list-unstyled float-left links">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
-              <li><a href="#">jQuery</a></li>
-              <li><a href="#">Bootstrap</a></li>
-            </ul>
-          </div> 
-        </div>  -->
-
-          <!-- <div class="col-lg-3">
-          <div class="widget">
-            <h3>Gallery</h3>
-            <ul class="instafeed instagram-gallery list-unstyled">
-              <li><a class="instagram-item" href="images/gal_1.jpg" data-fancybox="gal"><img src="images/gal_1.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_2.jpg" data-fancybox="gal"><img src="images/gal_2.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_3.jpg" data-fancybox="gal"><img src="images/gal_3.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_4.jpg" data-fancybox="gal"><img src="images/gal_4.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_5.jpg" data-fancybox="gal"><img src="images/gal_5.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_6.jpg" data-fancybox="gal"><img src="images/gal_6.jpg" alt="" width="72" height="72"></a>
-              </li>
-            </ul>
-          </div> 
-        </div>  -->
-
-          <div class="col-lg-4">
-            <div class="widget">
-              <h3>Contact</h3>
-              <address>
-                Ready to unlock your potential? Contact EduSpark Learning today
-                to schedule a consultation.
-              </address>
-              <ul class="list-unstyled links mb-4">
-                <li><a href="tel://11234567890">0-123-456-789</a></li>
-                <li><a href="tel://11234567890">0-123-456-789</a></li>
-                <li>
-                  <a href="mailto:info@mydomain.com">info@mydomain.com</a>
-                </li>
-              </ul>
-            </div>
-            <!-- /.widget -->
-          </div>
-          <!-- /.col-lg-3 -->
-        </div>
-        <!-- /.row -->
-
-        <div class="row mt-5" style="margin-bottom: -50px">
-          <div class="col-12 text-center">
-            <p>
-              Copyright &copy;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              . All Rights Reserved. &mdash; EduSpark Learning - Sign of Success
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- /.container -->
-    </div>
+    <?php 
+ 
+ include 'footer.php'
+ 
+ ?>
     <!-- /.site-footer -->
 
     <div id="overlayer"></div>

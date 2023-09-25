@@ -4,7 +4,7 @@ error_reporting(0);
 session_start();
 
 if (!isset($_SESSION['username'])) {
-  
+
   header('location:login.php');
 }
 
@@ -21,9 +21,7 @@ if (!isset($_SESSION['username'])) {
   <meta name="description" content="" />
   <meta name="keywords" content="bootstrap, bootstrap4" />
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Display+Playfair:wght@400;700&family=Inter:wght@400;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Display+Playfair:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 
 
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -54,68 +52,9 @@ if (!isset($_SESSION['username'])) {
 
 
 
-  <nav class="site-nav mb-5">
-  <?php
-  
-  if (!isset($_SESSION['username'])) {
-  
- include 'header.php';
-}
-
+<?php 
+include 'navbar.php'
 ?>
-    <div class="sticky-nav js-sticky-header">
-      <div class="container position-relative">
-        <div class="site-navigation text-center">
-          <a href="index.php" class="logo menu-absolute m-0">EduSpark</a>
-
-          <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-            <li class="active"><a href="index.php">Home</a></li>
-            <li class="has-children">
-              <a href="#">Dropdown</a>
-              <ul class="dropdown">
-                <li><a href="elements.php">Elements</a></li>
-                <li class="has-children">
-                  <a href="#">Menu Two</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Sub Menu One</a></li>
-                    <li><a href="#">Sub Menu Two</a></li>
-                    <li><a href="#">Sub Menu Three</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Menu Three</a></li>
-              </ul>
-            </li>
-            <li><a href="staff.php">Our Staff</a></li>
-            <li><a href="news.php">News</a></li>
-            <li><a href="gallery.php">Gallery</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="contact.php">Contact</a></li>
-          </ul>
-
-          <p class="btn-book btn btn-secondary btn-sm menu-absolute">
-
-            <?php 
-            if (!isset($_SESSION['username'])) {
-              ?>
-              Enroll Now
-              <?php
-            }
-            else{
-              echo $_SESSION['username']; 
-            }
-            ?>
-
-          </p>
-
-          <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
-            data-toggle="collapse" data-target="#main-navbar">
-            <span></span>
-          </a>
-
-        </div>
-      </div>
-    </div>
-  </nav>
 
 
   <div class="untree_co-hero overlay" style="background-image: url('images/hero-img-1-min.jpg');">
@@ -292,70 +231,9 @@ if (!isset($_SESSION['username'])) {
   </div>
 
 
-
-  <div class="untree_co-section">
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
-          <h2 class="line-bottom text-center mb-4">We Have Best Education</h2>
-          <p>EduSpark Learning, we're dedicated to nurturing minds and building brighter futures through personalized,
-            expert tutoring.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="feature">
-            <span class="uil uil-music"></span>
-            <h3>Music Class</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature">
-            <span class="uil uil-calculator-alt"></span>
-            <h3>Math Class</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="feature">
-            <span class="uil uil-book-open"></span>
-            <h3>English Class</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts.</p>
-          </div>
-        </div>
-
-
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay=100">
-          <div class="feature">
-            <span class="uil uil-book-alt"></span>
-            <h3>Reading for Kids</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature">
-            <span class="uil uil-history"></span>
-            <h3>History Class</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts.</p>
-          </div>
-        </div>
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="feature">
-            <span class="uil uil-headphones"></span>
-            <h3>Music</h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-              blind texts.</p>
-          </div>
-        </div>
-      </div>
-    </div> <!-- /.container -->
-  </div> <!-- /.untree_co-section -->
+  <?php 
+ include 'subject.php';
+ ?> <!-- /.untree_co-section -->
 
 
   <div class="untree_co-section bg-light">
@@ -632,220 +510,22 @@ if (!isset($_SESSION['username'])) {
   </div>
 
 
-  <div class="untree_co-section">
+ <?php
+ 
+ include 'whyChooseUs.php'
+ 
+ ?>
+ 
+  <!-- /.untree_co-section -->
 
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 mr-auto mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="0">
-          <img src="images/img-school-5-min.jpg" alt="image" class="img-fluid" style="height: 380px;">
-        </div>
-        <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="line-bottom mb-4">Why Choose Us</h3>
-          <p>At EduSpark Learning, we're more than just tutors; we're your partners in learning. Here's why you should
-            choose us:</p>
-
-          <div class="custom-accordion" id="accordion_1">
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                  aria-expanded="false" aria-controls="collapseOne">Expert Tutors</button>
-              </h2>
-
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion_1">
-                <div class="accordion-body">
-                  <div class="d-flex">
-                    <!-- <div class="accordion-img mr-4">
-                      <img src="images/img-school-1-min.jpg" alt="Image" class="img-fluid">
-                    </div> -->
-                    <div>
-                      <p>Our team of experienced tutors is passionate about education. They are experts in their fields
-                        and are dedicated to helping students succeed.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- .accordion-item -->
-
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                  aria-expanded="false" aria-controls="collapseTwo">Personalized Approach</button>
-              </h2>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion_1">
-                <div class="accordion-body">
-                  <div class="d-flex">
-                    <!-- <div class="accordion-img mr-4">
-                      <img src="images/img-school-2-min.jpg" alt="Image" class="img-fluid">
-                    </div> -->
-                    <div>
-                      <p>We understand that every student is unique. That's why we tailor our tutoring sessions to meet
-                        the individual needs and learning styles of each student.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> <!-- .accordion-item -->
-
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
-                  aria-expanded="false" aria-controls="collapseThree">Comprehensive Subjects</button>
-              </h2>
-
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion_1">
-                <div class="accordion-body">
-                  <div class="d-flex">
-                    <!-- <div class="accordion-img mr-4">
-                      <img src="images/img-school-3-min.jpg" alt="Image" class="img-fluid">
-                    </div> -->
-                    <div>
-                      <p>Whether it's math, science, physics, chemistry, biology, French, Punjabi, or English, we offer
-                        a wide range of subjects to support students from elementary school to college.</p>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-            </div> <!-- .accordion-item -->
-
-
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
-                  aria-expanded="false" aria-controls="collapseFour">Flexible Scheduling</button>
-              </h2>
-
-              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion_1">
-                <div class="accordion-body">
-                  <div class="d-flex">
-                    <!-- <div class="accordion-img mr-4">
-                      <img src="images/img-school-3-min.jpg" alt="Image" class="img-fluid">
-                    </div> -->
-                    <div>
-                      <p>We know that your schedule is busy. That's why we offer flexible scheduling options to
-                        accommodate your needs.</p>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-            </div> <!-- .accordion-item -->
-
-            <div class="accordion-item">
-              <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive"
-                  aria-expanded="false" aria-controls="collapseFive">Proven Results</button>
-              </h2>
-
-              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion_1">
-                <div class="accordion-body">
-                  <div class="d-flex">
-                    <!-- <div class="accordion-img mr-4">
-                      <img src="images/img-school-3-min.jpg" alt="Image" class="img-fluid">
-                    </div> -->
-                    <div>
-                      <p>Our track record speaks for itself. Our students consistently achieve improved grades,
-                        increased confidence, and a love for learning.</p>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-            </div> <!-- .accordion-item -->
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div> <!-- /.untree_co-section -->
-
-  <div class="site-footer">
-
-
-    <div class="container">
-
-      <div class="row">
-        <div class="col-lg-5 mr-auto">
-          <div class="widget">
-            <h3>About Us<span class="text-primary">.</span> </h3>
-            <p>EduSpark Learning, we're more than just tutors; we're your partners in learning.</p>
-          </div> <!-- /.widget -->
-          <div class="widget">
-            <h3>Connect</h3>
-            <ul class="list-unstyled social">
-              <li><a href="#"><span class="icon-youtube"></span></a></li>
-              <li><a href="#"><span class="icon-facebook"></span></a></li>
-              <li><a href="#"><span class="icon-twitter"></span></a></li>
-              <li><a href="#"><span class="icon-linkedin"></span></a></li>
-              <li><a href="#"><span class="icon-instagram"></span></a></li>
-            </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
-
-        <!-- <div class="col-lg-3 ml-auto">
-          <div class="widget">
-            <h3>Projects</h3>
-            <ul class="list-unstyled float-left links">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
-              <li><a href="#">jQuery</a></li>
-              <li><a href="#">Bootstrap</a></li>
-            </ul>
-          </div> 
-        </div>  -->
-
-        <!-- <div class="col-lg-3">
-          <div class="widget">
-            <h3>Gallery</h3>
-            <ul class="instafeed instagram-gallery list-unstyled">
-              <li><a class="instagram-item" href="images/gal_1.jpg" data-fancybox="gal"><img src="images/gal_1.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_2.jpg" data-fancybox="gal"><img src="images/gal_2.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_3.jpg" data-fancybox="gal"><img src="images/gal_3.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_4.jpg" data-fancybox="gal"><img src="images/gal_4.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_5.jpg" data-fancybox="gal"><img src="images/gal_5.jpg" alt="" width="72" height="72"></a>
-              </li>
-              <li><a class="instagram-item" href="images/gal_6.jpg" data-fancybox="gal"><img src="images/gal_6.jpg" alt="" width="72" height="72"></a>
-              </li>
-            </ul>
-          </div> 
-        </div>  -->
-
-
-        <div class="col-lg-4">
-          <div class="widget">
-            <h3>Contact</h3>
-            <address>Ready to unlock your potential? Contact EduSpark Learning today to schedule a consultation.
-            </address>
-            <ul class="list-unstyled links mb-4">
-              <li><a href="tel://11234567890">0-123-456-789</a></li>
-              <li><a href="tel://11234567890">0-123-456-789</a></li>
-              <li><a href="mailto:info@mydomain.com">info@mydomain.com</a></li>
-            </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
-
-      </div> <!-- /.row -->
-
-      <div class="row mt-5" style="margin-bottom: -50px;">
-        <div class="col-12 text-center">
-          <p>Copyright &copy;
-            <script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; EduSpark Learning -
-            Sign of Success
-          </p>
-        </div>
-      </div>
-    </div> <!-- /.container -->
-  </div> <!-- /.site-footer -->
+  <?php 
+ 
+ include 'footer.php'
+ 
+ ?>
+  
+  
+  <!-- /.site-footer -->
 
   <div id="overlayer"></div>
   <div class="loader">
